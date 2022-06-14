@@ -1,7 +1,8 @@
-import threading
-import homoglyphs as hg
-import string
 import socket
+import string
+import threading
+
+import homoglyphs as hg
 
 
 def ping_list(domain_iter: iter, zones: list):
@@ -57,7 +58,6 @@ def main(domains: list, zones: list):
             
 
     domains_to_chech = last_symbol_domains | homoglyph_domains | additional_dot_domains | symbol_remove_domains
-    print(homoglyph_domains)
     prepared_domains_iter = iter(domains_to_chech)
     workers = list()
 
